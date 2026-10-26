@@ -1532,3 +1532,6 @@ UNIST Design Department, (C) 2021-2023 UNIST
 .form-card__more>summary{color:#6b00ff;font-weight:600}
 .form-card__more>summary:hover,.form-card__more>summary:focus-visible{color:#4a00b3}
 .form-card__more .form-card__facts dt{color:#6b00ff;font-weight:600}
+
+/* B 묶음 이름(Courses·Experimental budget …)은 퍼플 */
+.forms-group-b .forms-group__title{color:#6b00ff}
