@@ -1431,3 +1431,8 @@ UNIST Design Department, (C) 2021-2023 UNIST
 .work-design-v4 .work-v3__side .work-v3__list--years a.work-v3__item{font-variant-numeric:tabular-nums}
 .work-design-v4 .work-v3__side .work-v3__list:not(.work-v3__list--years) a.work-v3__item{position:relative;padding-right:1.5rem}
 .work-design-v4 .work-v3__side .work-v3__list:not(.work-v3__list--years) a.work-v3__item .work-v3__sign{position:absolute;top:50%;left:calc((200% + 3.5rem) / 3 + var(--year-w, 2.04rem) + .45rem);margin-top:-5px}
+
+/* 회색 판 안 좌우 여백을 같게: 연도 세 칸을 판 양끝에 붙이고(가운데 칸은 사이), × 줄은 판 안쪽 오른쪽 끝선 */
+.work-design-v4 .work-v3__side .work-v3__list--years{grid-template-columns:repeat(3,auto);justify-content:space-between;column-gap:1rem}
+.work-design-v4 .work-v3__side .work-v3__list:not(.work-v3__list--years) a.work-v3__item{padding-right:1rem}
+.work-design-v4 .work-v3__side .work-v3__list:not(.work-v3__list--years) a.work-v3__item .work-v3__sign{right:0;left:auto}
