@@ -1488,3 +1488,7 @@ UNIST Design Department, (C) 2021-2023 UNIST
 .submit-file__row{padding-top:.4rem;padding-bottom:.4rem}
 /* 폰에서는 보내기 버튼을 가로 꽉 채우고 글자는 가운데 */
 @media(max-width:599.98px){.submit-send{justify-self:stretch;justify-content:center}}
+
+/* 1026: 푸터는 보라색 면만(위 연보라 줄무늬·로고·글자 숨김. 내용은 나중에 다시 정한다) */
+.footer{min-height:9rem;padding:0;box-shadow:none}
+.footer__info,.footer__copyright{display:none}
