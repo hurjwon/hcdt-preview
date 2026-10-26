@@ -1535,3 +1535,7 @@ UNIST Design Department, (C) 2021-2023 UNIST
 
 /* B 묶음 이름(Courses·Experimental budget …)은 퍼플 */
 .forms-group-b .forms-group__title{color:#6b00ff}
+
+/* When & how 기호: Work 필터와 같은 그린 +(10px·1.5px), 펼치면 45도 돌아 빨간 × */
+.form-card__more>summary::after{content:"";display:inline-block;width:10px;height:10px;color:#000;font-size:0;background:linear-gradient(currentColor,currentColor) center/10px 1.5px no-repeat,linear-gradient(currentColor,currentColor) center/1.5px 10px no-repeat;transition:transform 300ms cubic-bezier(.2,.7,.2,1),color 200ms}
+.form-card__more[open]>summary::after{color:#ff0000;transform:rotate(45deg)}
