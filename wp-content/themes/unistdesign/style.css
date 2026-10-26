@@ -1545,3 +1545,7 @@ UNIST Design Department, (C) 2021-2023 UNIST
 .form-card__more>summary::after{color:inherit}
 .form-card__more[open]>summary::after{color:#ff0000}
 
+
+/* Work 상세 대표 이미지: 흰 여백이 들어간 이미지도 액자처럼 보이게 연한 회색 칸 + 흰색만 회색에 섞기(multiply) */
+.work-v1__hero{background:#f5f5f3}
+.work-v1__hero img{mix-blend-mode:multiply}
