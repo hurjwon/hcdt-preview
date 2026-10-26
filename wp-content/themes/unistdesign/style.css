@@ -1539,3 +1539,8 @@ UNIST Design Department, (C) 2021-2023 UNIST
 /* When & how 기호: Work 필터와 같은 그린 +(10px·1.5px), 펼치면 45도 돌아 빨간 × */
 .form-card__more>summary::after{content:"";display:inline-block;width:10px;height:10px;color:#000;font-size:0;background:linear-gradient(currentColor,currentColor) center/10px 1.5px no-repeat,linear-gradient(currentColor,currentColor) center/1.5px 10px no-repeat;transition:transform 300ms cubic-bezier(.2,.7,.2,1),color 200ms}
 .form-card__more[open]>summary::after{color:#ff0000;transform:rotate(45deg)}
+
+/* When & how 글자: Work 필터 항목과 같게(평소 연한 회색, 호버·펼침은 검정). 펼친 이름표는 원래 회색 */
+.form-card__more>summary{color:#999;font-weight:400}
+.form-card__more>summary:hover,.form-card__more>summary:focus-visible,.form-card__more[open]>summary{color:#000}
+.form-card__more .form-card__facts dt{color:rgba(0,0,0,.45)}
