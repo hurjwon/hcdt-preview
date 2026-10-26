@@ -1376,3 +1376,16 @@ UNIST Design Department, (C) 2021-2023 UNIST
 @media(min-width:783px){.header__navigation .header-view-switch{order:99;margin-left:auto;padding-left:3rem}}
 /* Submit Work 는 위 비교 탭 줄이 없어서 오른쪽 검색창과 겹치지 않게 조금 내린다 */
 @media(min-width:783px){.submit-page .forms-intro{margin-top:7.5rem}}
+
+/* 필터: 항목마다 박스 대신 묶음(Year·Lab) 전체 뒤에 연한 회색 판 하나. 항목 끝에 + / 고르면 빨간 × */
+.work-design-v4 .work-v3__side a.work-v3__item,.work-design-v4 .work-v3__side a.work-v3__item:hover,.work-design-v4 .work-v3__side a.work-v3__item:focus-visible,.work-design-v4 .work-v3__side a.work-v3__item.is-current,.work-design-v4 .work-v3__side a.work-v3__item.is-picking{background:none}
+.work-design-v4 .work-v3__side a.work-v3__item{padding:.3rem 0}
+.work-design-v4 .work-v3__side .work-v3__list,.work-design-v4 .work-v3__side .work-v3__list--years{gap:.15rem 1.25rem}
+.work-design-v4 .work-v3__group:not(.is-collapsed) .work-v4__panel{padding:.75rem 1rem;background:#f5f5f3}
+@media(max-width:782.98px){.work-design-v4 .work-v3__side a.work-v3__item{padding:.55rem 0}.work-design-v4 .work-v3__group:not(.is-collapsed) .work-v4__panel{margin-bottom:1rem}}
+/* 메뉴: 지금 보고 있는 페이지 탭은 퍼플 */
+.primary-menu>.current-menu-item>a,.primary-menu>.current-menu-parent>a,.primary-menu>.current-post-ancestor>a,.primary-menu>.current_page_item>a,.primary-menu>.current-menu-ancestor>a{color:#6b00ff}
+/* Space: 평면도에서 누른 공간의 사진이 살짝 커졌다가 돌아온다(사진 칸 크기는 그대로) */
+.space-card__photos{overflow-y:hidden}
+.space-card.is-popped .space-card__photos img{animation:space-photo-zoom 1100ms cubic-bezier(.3,.7,.3,1) both}
+@keyframes space-photo-zoom{0%{transform:scale(1)}35%{transform:scale(1.09)}100%{transform:scale(1)}}
