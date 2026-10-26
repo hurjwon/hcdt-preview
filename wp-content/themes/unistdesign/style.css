@@ -1338,3 +1338,41 @@ UNIST Design Department, (C) 2021-2023 UNIST
 
 /* 폰 Space 오른쪽 좁은 카드: 사진 없는 띠에서 'Bookable' 배지와 'No photo yet' 이 겹치지 않게 글자를 오른쪽으로 */
 @media(max-width:719.98px){.space-card__photos.is-none .space-photo-missing{justify-content:flex-end;padding-right:.75rem}}
+
+/* View 탭: 넓은 화면은 메뉴 줄 맨 오른쪽(페이지 안의 같은 탭은 숨김). 고른 탭 밑줄은 HCDT Fluoxetine(#73D888) */
+.header-view-switch{display:none}
+@media(min-width:783px){
+.header__navigation .header-view-switch{display:flex;align-items:center;gap:1rem;margin:0 0 0 auto;padding:0}
+.work-view-switch,.space-view-switch,.forms-view-switch{display:none!important}
+}
+.header-view-switch a.is-current,.work-view-switch a.is-current,.space-view-switch a.is-current,.forms-view-switch a.is-current{border-bottom-color:#73d888}
+/* Submit Work 는 이제 실제 메뉴라 회색 표시를 뺀다 */
+.primary-menu>.menu-item>a[href*="/submit-work/"]{color:inherit}
+/* Submit Work 페이지 */
+.submit-trap{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.submit-notice{margin:0 0 2rem;padding:1rem 1.25rem;background:#f5f5f3;font-size:.9375rem}
+.submit-notice.is-ok{border-left:3px solid #73d888}
+.submit-notice.is-error{border-left:3px solid #ff0000}
+.submit-field textarea{width:100%;padding:.6rem .75rem;border:1px solid rgba(0,0,0,.25);border-radius:0;font:inherit;font-size:.9375rem;line-height:1.5;resize:vertical}
+.submit-send{display:inline-flex;align-items:center;padding:.75rem 1.4rem;border:1px solid #000;border-radius:999px;background:#000;color:#fff;font:inherit;font-size:.9375rem;font-weight:500;cursor:pointer;transition:background-color 200ms,border-color 200ms}
+.submit-send:hover,.submit-send:focus-visible{border-color:#6b00ff;background:#6b00ff}
+.submit-decline{margin-left:.75rem;padding:.75rem 1.2rem;border:1px solid rgba(0,0,0,.3);border-radius:999px;background:#fff;color:#000;font:inherit;font-size:.9375rem;cursor:pointer}
+.submit-decline:hover,.submit-decline:focus-visible{border-color:#000}
+.submit-review,.submit-result,.submit-mailbox{max-width:60rem;margin:0 0 4rem}
+.submit-review__label{margin:0 0 1.25rem;color:rgba(0,0,0,.55);font-size:.875rem}
+.submit-review__grid{display:grid;grid-template-columns:minmax(0,1fr);gap:1.5rem}
+@media(min-width:783px){.submit-review__grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--dd-gap)}}
+.submit-review__img img{display:block;width:100%;height:auto}
+.submit-review__title{margin:0 0 1.25rem;font-size:1.5rem;font-weight:700;line-height:1.2}
+.submit-review__body,.submit-review__abstract{margin:0 0 1rem;font-size:.9375rem;line-height:1.6}
+.submit-review__abstract.is-ko{color:rgba(0,0,0,.55);font-size:.875rem}
+.submit-review__actions{margin-top:1.75rem}
+.submit-mailbox__mail{margin:0 0 1.5rem;padding:1rem 1.25rem;background:#f5f5f3}
+.submit-mailbox__meta{margin:0 0 .25rem;color:rgba(0,0,0,.5);font-size:.8125rem}
+.submit-mailbox__mail h3{margin:0 0 .75rem;font-size:1rem}
+.submit-mailbox__body{font-size:.875rem;line-height:1.6;word-break:break-word}
+
+/* View 탭은 메뉴 항목들 뒤, 맨 오른쪽 */
+@media(min-width:783px){.header__navigation .header-view-switch{order:99;margin-left:auto;padding-left:3rem}}
+/* Submit Work 는 위 비교 탭 줄이 없어서 오른쪽 검색창과 겹치지 않게 조금 내린다 */
+@media(min-width:783px){.submit-page .forms-intro{margin-top:7.5rem}}
