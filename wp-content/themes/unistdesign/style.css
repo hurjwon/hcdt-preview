@@ -1544,3 +1544,7 @@ UNIST Design Department, (C) 2021-2023 UNIST
 .form-card__more>summary{color:#999;font-weight:400}
 .form-card__more>summary:hover,.form-card__more>summary:focus-visible,.form-card__more[open]>summary{color:#000}
 .form-card__more .form-card__facts dt{color:rgba(0,0,0,.45)}
+
+/* + 는 글자와 같은 색(평소 회색, 호버 검정). 펼치면 빨간 × */
+.form-card__more>summary::after{color:inherit}
+.form-card__more[open]>summary::after{color:#ff0000}
