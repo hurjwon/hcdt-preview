@@ -1517,3 +1517,13 @@ UNIST Design Department, (C) 2021-2023 UNIST
 .forms-group-c .forms-group:last-child{margin-bottom:0}
 .forms-group-c .forms-group__title{margin:0 0 1.5rem;font-size:1.25rem;font-weight:800;line-height:1.15}
 @media(max-width:782.98px){.forms-group-c .forms-group{padding:1.25rem 1rem}}
+
+/* B 확정(1026): 양식 하나가 한 덩어리로 보이게. 안쪽(제목→설명→When & how→버튼)은 좁게, 양식 사이는 넓게 + 아주 연한 선 */
+.forms-group-b .forms-group__cards{row-gap:0}
+.forms-group-b .form-card__name{margin:0 0 .4rem}
+.forms-group-b .form-card__desc{margin:0 0 .55rem}
+.forms-group-b .form-card__more{margin:0 0 .85rem}
+.forms-group-b .forms-group__cards>.form-card+.form-card{margin-top:2rem;padding-top:2rem;border-top:1px solid #e6e3dd}
+
+/* 할 일 버튼: 회색 테두리 선 없이 흰 둥근 면만(호버·고름은 퍼플) */
+.form-finder__task{border-color:transparent}
