@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta name="robots" content="noindex, nofollow">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mobile preview – Work</title>
+<style>
+/* 폰 목업: 375×812(아이폰 기준). 위 44px 상태 표시줄, 아래 홈 인디케이터 */
+html,body{height:100%}
+body{margin:0;background:#ececec;font:13px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#000;overflow-x:hidden}
+.mp-bar{display:flex;align-items:center;justify-content:center;gap:1.5rem;height:52px}
+.mp-bar a{color:#000;font-weight:600;text-decoration:none}
+.mp-bar a:hover{color:#6b00ff}
+.mp-bar span{color:rgba(0,0,0,.5)}
+.mp-stage{display:flex;align-items:flex-start;justify-content:center;gap:56px}
+/* 폰 옆 비교 패널: 프레임 안 페이지의 비교 탭을 그대로 가져와 보여준다 */
+.mp-panel{flex:none;width:240px;padding-top:24px}
+.mp-panel nav{display:flex;flex-wrap:wrap;align-items:baseline;gap:.45rem .9rem;margin:0 0 1.4rem;font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+.mp-panel nav>span{flex:0 0 100%;color:rgba(0,0,0,.4);font-weight:600}
+.mp-panel nav a{padding-bottom:3px;border-bottom:2px solid transparent;color:rgba(0,0,0,.55);text-decoration:none}
+.mp-panel nav a:hover{color:#000}
+.mp-panel nav a.is-current{border-bottom-color:#6b00ff;color:#000}
+.mp-panel .mp-panel-empty{color:rgba(0,0,0,.4)}
+@media(max-width:760px){.mp-stage{flex-direction:column;align-items:center;gap:0}.mp-panel{width:auto;padding:0 16px}}
+.mp-phone{position:relative;flex:none;width:375px;height:812px;padding:12px;border-radius:56px;background:#111;box-shadow:0 0 0 2px #2a2a2a,0 30px 60px rgba(0,0,0,.18);transform-origin:top center}
+.mp-screen{position:relative;width:375px;height:812px;overflow:hidden;border-radius:44px;background:#fff}
+.mp-status{position:absolute;top:0;right:0;left:0;z-index:2;display:flex;align-items:center;justify-content:space-between;height:44px;padding:0 26px 0 32px;background:#fff;font-size:15px;font-weight:600;letter-spacing:-.01em}
+.mp-icons{display:flex;align-items:center;gap:6px}
+.mp-island{position:absolute;top:11px;left:50%;z-index:3;width:120px;height:33px;margin-left:-60px;border-radius:20px;background:#000}
+.mp-screen iframe{position:absolute;top:44px;left:0;display:block;width:375px;height:768px;border:0}
+.mp-home{position:absolute;bottom:8px;left:50%;z-index:3;width:134px;height:5px;margin-left:-67px;border-radius:3px;background:#000}
+</style>
+</head>
+<body>
+	<div class="mp-bar">
+		<a href="../_work_hover-2_work_lab-dxi/">← Desktop</a>
+		<span>Mobile preview · 375 × 812</span>
+	</div>
+	<div class="mp-stage">
+		<aside class="mp-panel" id="mp-panel" aria-label="Compare"></aside>
+		<div class="mp-phone" id="mp-phone">
+			<div class="mp-screen">
+				<div class="mp-status" aria-hidden="true">
+					<span>9:41</span>
+					<span class="mp-icons">
+						<svg width="18" height="12" viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
+						<svg width="16" height="12" viewBox="0 0 16 12"><path d="M8 2.5c2.3 0 4.4.9 6 2.4l1.2-1.3C13.3 1.7 10.8.7 8 .7S2.7 1.7.8 3.6L2 4.9c1.6-1.5 3.7-2.4 6-2.4zm0 3.6c1.3 0 2.5.5 3.4 1.3l1.2-1.3C11.4 5 9.8 4.3 8 4.3S4.6 5 3.4 6.1l1.2 1.3c.9-.8 2.1-1.3 3.4-1.3zM8 9.6 6 11.5h4z"/></svg>
+						<svg width="27" height="13" viewBox="0 0 27 13"><rect x=".5" y=".5" width="23" height="12" rx="3.5" fill="none" stroke="#000" opacity=".4"/><rect x="2" y="2" width="20" height="9" rx="2"/><path d="M25 4.5v4c.8-.3 1.5-1.1 1.5-2s-.7-1.7-1.5-2z" opacity=".4"/></svg>
+					</span>
+				</div>
+				<div class="mp-island" aria-hidden="true"></div>
+				<iframe id="mp-frame" src="../_work_hover-2_work_lab-dxi/" title="Mobile preview"></iframe>
+				<div class="mp-home" aria-hidden="true"></div>
+			</div>
+		</div>
+	</div>
+<script>
+// 프레임 안 페이지마다: PC 스크롤바를 숨겨(폰처럼) 폭 375px 를 그대로 쓰고,
+// 비교 탭(버전·호버·배치·상세 원본/V1)은 폰 화면에서 빼서 옆 패널로 옮긴다
+var mpFrame = document.getElementById( 'mp-frame' );
+var mpPanel = document.getElementById( 'mp-panel' );
+mpFrame.addEventListener( 'load', function () {
+	try {
+		var doc = this.contentDocument;
+		var style = doc.createElement( 'style' );
+		style.textContent = 'html,html *{scrollbar-width:none!important}html::-webkit-scrollbar,html *::-webkit-scrollbar{display:none!important;width:0!important;height:0!important}.work-switches,.work-single-switch,.space-switch,.space-view-switch,.forms-switch{display:none!important}';
+		doc.head.appendChild( style );
+		mpPanel.innerHTML = '';
+		doc.querySelectorAll( '.work-switches nav, .work-single-switch, .space-switch, .forms-switch' ).forEach( function ( nav ) {
+			if ( nav.classList.contains( 'work-view-switch' ) || nav.classList.contains( 'space-view-switch' ) || nav.classList.contains( 'forms-view-switch' ) ) {
+				return;
+			}
+			var copy = document.createElement( 'nav' );
+			var label = nav.querySelector( '.work-design-switch__label' );
+			var head = document.createElement( 'span' );
+			head.textContent = label ? label.textContent : ( nav.classList.contains( 'work-single-switch' ) ? 'Detail' : 'Version' );
+			// Space 의 버전 탭은 라벨이 없어서 Version 으로
+			copy.appendChild( head );
+			nav.querySelectorAll( 'a' ).forEach( function ( a ) {
+				var link = document.createElement( 'a' );
+				link.href = a.href;
+				link.textContent = a.textContent;
+				if ( a.classList.contains( 'is-current' ) ) {
+					link.className = 'is-current';
+				}
+				link.addEventListener( 'click', function ( event ) {
+					event.preventDefault();
+					mpFrame.src = this.href;
+				} );
+				copy.appendChild( link );
+			} );
+			mpPanel.appendChild( copy );
+		} );
+		if ( ! mpPanel.children.length ) {
+			mpPanel.innerHTML = '<p class="mp-panel-empty">No options on this page</p>';
+		}
+	} catch ( e ) {}
+} );
+// 창 높이가 낮으면 폰 전체가 한 화면에 들어오도록 줄인다
+function mpFit() {
+	var phone = document.getElementById( 'mp-phone' );
+	var scale = window.innerWidth > 760 ? Math.min( 1, ( window.innerHeight - 52 - 16 ) / 836 ) : 1;
+	phone.style.transform = 'scale(' + scale + ')';
+	phone.parentNode.style.height = Math.ceil( 836 * scale ) + 'px';
+}
+window.addEventListener( 'resize', mpFit );
+mpFit();
+</script>
+</body>
+</html>
+	
