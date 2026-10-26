@@ -1257,3 +1257,18 @@ UNIST Design Department, (C) 2021-2023 UNIST
 .work-v1__title{font-size:clamp(1.75rem,2.2vw,2.25rem)}
 .work-v1__more-grid .section--posts{column-gap:var(--dd-gap)}
 }
+
+/* 1021 미팅 피드백(색): 안 고른 항목은 연한 회색(#999), 고른 항목은 확실히 진하게(검정) + 빨간 × */
+.work-design-v4 .work-v3__side a.work-v3__item{color:#999}
+.work-design-v4 .work-v3__side a.work-v3__item:hover,.work-design-v4 .work-v3__side a.work-v3__item:focus-visible{color:#000}
+.work-design-v4 .work-v3__side a.work-v3__item.is-current,.work-design-v4 .work-v3__side a.work-v3__item.is-picking{color:#000}
+.work-design-v4 .work-v3__side a.work-v3__item.is-current:hover,.work-design-v4 .work-v3__side a.work-v3__item.is-current:focus-visible{color:#999}
+/* 폰: 교수님 연구실 뉴스 목록처럼 진한 가는 선 사이에 Year·Lab, 오른쪽 끝에 큰 + */
+@media(max-width:782.98px){
+.work-design-v4 .work-v3__group{border-top-color:#000}
+.work-design-v4 .work-v3__group:last-child{border-bottom-color:#000}
+.work-design-v4 .work-v4__toggle{padding:1.1rem 0}
+.work-design-v4 .work-v4__pm{width:16px;height:16px}
+.work-design-v4 .work-v4__pm::before{top:7.5px;left:0;width:16px;height:1px}
+.work-design-v4 .work-v4__pm::after{top:0;left:7.5px;width:1px;height:16px}
+}
