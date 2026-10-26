@@ -23,18 +23,18 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 :where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
 .wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
 </style>
-<link rel='stylesheet' id='unistdesign-style-css' href='../wp-content/themes/unistdesign/style.css?v=1026151342' media='all' />
-<link rel='stylesheet' id='unistdesign-fonts-css' href='https://use.typekit.net/uva3epe.css?ver=1.1.39' media='all' />
-<link rel='stylesheet' id='unistdesign-fonts-kr-css' href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css?ver=1.1.39' media='all' />
-<link rel='stylesheet' id='dashicons-css' href='../wp-includes/css/dashicons.min.css?v=1026151342' media='all' />
-<script src="../wp-includes/js/dist/vendor/wp-polyfill-inert.min.js?v=1026151342" id="wp-polyfill-inert-js"></script>
-<script src="../wp-includes/js/dist/vendor/regenerator-runtime.min.js?v=1026151342" id="regenerator-runtime-js"></script>
-<script src="../wp-includes/js/dist/vendor/wp-polyfill.min.js?v=1026151342" id="wp-polyfill-js"></script>
-<script src="../wp-includes/js/dist/dom-ready.min.js?v=1026151342" id="wp-dom-ready-js"></script>
+<link rel='stylesheet' id='unistdesign-style-css' href='../wp-content/themes/unistdesign/style.css?v=1026152307' media='all' />
+<link rel='stylesheet' id='unistdesign-fonts-css' href='https://use.typekit.net/uva3epe.css?ver=1.1.41' media='all' />
+<link rel='stylesheet' id='unistdesign-fonts-kr-css' href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css?ver=1.1.41' media='all' />
+<link rel='stylesheet' id='dashicons-css' href='../wp-includes/css/dashicons.min.css?v=1026152307' media='all' />
+<script src="../wp-includes/js/dist/vendor/wp-polyfill-inert.min.js?v=1026152307" id="wp-polyfill-inert-js"></script>
+<script src="../wp-includes/js/dist/vendor/regenerator-runtime.min.js?v=1026152307" id="regenerator-runtime-js"></script>
+<script src="../wp-includes/js/dist/vendor/wp-polyfill.min.js?v=1026152307" id="wp-polyfill-js"></script>
+<script src="../wp-includes/js/dist/dom-ready.min.js?v=1026152307" id="wp-dom-ready-js"></script>
 <script id="unistdesign-ajax-script-js-extra">
 var unistdesignAjaxPosts = {"url": "", "action": "unistdesign_ajax_posts", "posts": "{\"page\":0,\"pagename\":\"submit-work\",\"error\":\"\",\"m\":\"\",\"p\":0,\"post_parent\":\"\",\"subpost\":\"\",\"subpost_id\":\"\",\"attachment\":\"\",\"attachment_id\":0,\"name\":\"submit-work\",\"page_id\":0,\"second\":\"\",\"minute\":\"\",\"hour\":\"\",\"day\":0,\"monthnum\":0,\"year\":0,\"w\":0,\"category_name\":\"\",\"tag\":\"\",\"cat\":\"\",\"tag_id\":\"\",\"author\":\"\",\"author_name\":\"\",\"feed\":\"\",\"tb\":\"\",\"paged\":0,\"meta_key\":\"\",\"meta_value\":\"\",\"preview\":\"\",\"s\":\"\",\"sentence\":\"\",\"title\":\"\",\"fields\":\"\",\"menu_order\":\"\",\"embed\":\"\",\"category__in\":[],\"category__not_in\":[],\"category__and\":[],\"post__in\":[],\"post__not_in\":[],\"post_name__in\":[],\"tag__in\":[],\"tag__not_in\":[],\"tag__and\":[],\"tag_slug__in\":[],\"tag_slug__and\":[],\"post_parent__in\":[],\"post_parent__not_in\":[],\"author__in\":[],\"author__not_in\":[],\"search_columns\":[],\"ignore_sticky_posts\":false,\"suppress_filters\":false,\"cache_results\":true,\"update_post_term_cache\":true,\"update_menu_item_cache\":false,\"lazy_load_term_meta\":true,\"update_post_meta_cache\":true,\"post_type\":\"\",\"posts_per_page\":10,\"nopaging\":false,\"comments_per_page\":\"50\",\"no_found_rows\":false,\"order\":\"DESC\"}", "currentPage": "1", "maxPage": "0", "nonce": ""};
 </script>
-<script src="../wp-content/plugins/unistdesign-ajax/build/index.js?v=1026151342" id="unistdesign-ajax-script-js"></script>
+<script src="../wp-content/plugins/unistdesign-ajax/build/index.js?v=1026152307" id="unistdesign-ajax-script-js"></script>
 <script src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js?ver=0.4.4" id="unistdesign-smoothscroll-polyfill-js"></script>
 <meta name="generator" content="WordPress 6.4.1" />
 <link rel="canonical" href="./" />
@@ -110,13 +110,17 @@ var unistdesignAjaxPosts = {"url": "", "action": "unistdesign_ajax_posts", "post
 					<input type="hidden" name="action" value="unistdesign_submit_work">
 					<input type="hidden" id="_wpnonce" name="_wpnonce" value="5f869767b1" /><input type="hidden" name="_wp_http_referer" value="/submit-work/" />										<label class="submit-trap" aria-hidden="true">Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
 
-					<fieldset class="submit-form__kind">
-						<legend>Type</legend>
-						<label><input type="radio" name="kind" value="Publication" checked> Publication</label>
-						<label><input type="radio" name="kind" value="Award"> Award</label>
-						<label><input type="radio" name="kind" value="Exhibition"> Exhibition</label>
+										<fieldset class="submit-step">
+						<legend class="submit-step__title"><i>01</i>Type</legend>
+						<div class="submit-form__kind">
+							<label><input type="radio" name="kind" value="Publication" checked> <span>Publication</span></label>
+							<label><input type="radio" name="kind" value="Award"> <span>Award</span></label>
+							<label><input type="radio" name="kind" value="Exhibition"> <span>Exhibition</span></label>
+						</div>
 					</fieldset>
 
+					<fieldset class="submit-step">
+					<legend class="submit-step__title"><i>02</i>About the work</legend>
 					<label class="submit-field"><span>Title *</span>
 						<input name="title" type="text" required placeholder="e.g. Conversational Agents as Catalysts for Critical Thinking">
 					</label>
@@ -162,13 +166,17 @@ var unistdesignAjaxPosts = {"url": "", "action": "unistdesign_ajax_posts", "post
 					</div>
 					<div class="submit-row">
 						<label class="submit-field"><span>Date *</span>
-							<input name="date" type="date" required>
+														<input name="date" type="text" inputmode="numeric" required placeholder="YYYY-MM-DD" pattern="\d{4}-\d{2}-\d{2}" maxlength="10">
 						</label>
 						<label class="submit-field"><span>Link (DOI)</span>
 							<input name="link" type="url" placeholder="https://doi.org/…">
 							<small>A doi.org link adds a “Read paper” button.</small>
 						</label>
 					</div>
+					</fieldset>
+
+					<fieldset class="submit-step">
+					<legend class="submit-step__title"><i>03</i>Abstract</legend>
 					<label class="submit-field"><span data-label="abstract_en">Abstract (English)</span>
 						<textarea name="abstract_en" rows="6"></textarea>
 					</label>
@@ -176,19 +184,27 @@ var unistdesignAjaxPosts = {"url": "", "action": "unistdesign_ajax_posts", "post
 						<textarea name="abstract_ko" rows="4" lang="ko"></textarea>
 						<small>Shown smaller under the English text. Leave empty if there is none.</small>
 					</label>
-					<label class="submit-field"><span>Cover image</span>
-						<input name="image" type="file" accept="image/*">
+					</fieldset>
+
+					<fieldset class="submit-step">
+					<legend class="submit-step__title"><i>04</i>Images &amp; video</legend>
+										<label class="submit-field submit-file"><span>Cover image</span>
+						<span class="submit-file__row"><span class="submit-file__btn" aria-hidden="true">Choose image</span><input name="image" type="file" accept="image/*"><em class="submit-file__name">No file chosen</em></span>
 						<small>Landscape works best. Up to 8 MB.</small>
 					</label>
 					<div class="submit-row">
-						<label class="submit-field"><span>More images (optional)</span>
-							<input name="images[]" type="file" accept="image/*" multiple>
+						<label class="submit-field submit-file"><span>More images (optional)</span>
+							<span class="submit-file__row"><span class="submit-file__btn" aria-hidden="true">Choose image</span><input name="images[]" type="file" accept="image/*" multiple><em class="submit-file__name">No file chosen</em></span>
 							<small>Up to 6, shown in the post body.</small>
 						</label>
 						<label class="submit-field"><span>Video link (optional)</span>
 							<input name="video" type="url" placeholder="https://vimeo.com/…">
 						</label>
 					</div>
+					</fieldset>
+
+					<fieldset class="submit-step">
+					<legend class="submit-step__title"><i>05</i>Your contact</legend>
 					<div class="submit-row">
 						<label class="submit-field"><span>Your name *</span>
 							<input name="your_name" type="text" required autocomplete="name">
@@ -198,6 +214,7 @@ var unistdesignAjaxPosts = {"url": "", "action": "unistdesign_ajax_posts", "post
 							<small>We let you know when it is published.</small>
 						</label>
 					</div>
+					</fieldset>
 					<p class="submit-check" aria-live="polite"></p>
 					<button type="submit" class="submit-send">Send for approval</button>
 				</form>
@@ -240,7 +257,7 @@ var unistdesignAjaxPosts = {"url": "", "action": "unistdesign_ajax_posts", "post
 						out( 'title' ).textContent = title ? ( 'Publication' === kind && venue ? title + ', ' + venue : title ) : 'Your title, Venue';
 						var labs = [ labName( 'lab' ), labName( 'lab2' ) ].filter( Boolean ).filter( function ( v, i, a ) { return a.indexOf( v ) === i; } );
 						out( 'lab' ).textContent = labs.join( ' + ' ) || 'Lab';
-						var d = val( 'date' );
+						var d = /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$/.test( val( 'date' ) ) ? val( 'date' ) : '';
 						out( 'date' ).textContent = d ? months[ +d.slice( 5, 7 ) - 1 ] + ' ' + +d.slice( 8, 10 ) + ', ' + d.slice( 0, 4 ) : 'Date';
 						// 빠진 필수 항목 안내
 						var missing = [];
@@ -261,6 +278,13 @@ var unistdesignAjaxPosts = {"url": "", "action": "unistdesign_ajax_posts", "post
 							e.preventDefault();
 							check.scrollIntoView( { block: 'center' } );
 						}
+					} );
+					// 고른 파일 이름을 우리 글자로 보여준다
+					form.querySelectorAll( '.submit-file input[type=file]' ).forEach( function ( input ) {
+						input.addEventListener( 'change', function () {
+							var names = Array.prototype.map.call( input.files, function ( f ) { return f.name; } );
+							input.closest( '.submit-file' ).querySelector( '.submit-file__name' ).textContent = names.length ? names.join( ', ' ) : 'No file chosen';
+						} );
 					} );
 					form.elements.image.addEventListener( 'change', function () {
 						var f = this.files[ 0 ];
@@ -300,8 +324,8 @@ var unistdesignAjaxPosts = {"url": "", "action": "unistdesign_ajax_posts", "post
 	</footer>
 </div>
 
-<script src="../wp-content/themes/unistdesign/js/navigation.js?v=1026151342" id="unistdesign-navigation-js"></script>
-<script src="../wp-content/themes/unistdesign/js/main.js?v=1026151342" id="unistdesign-main-js"></script>
+<script src="../wp-content/themes/unistdesign/js/navigation.js?v=1026152307" id="unistdesign-navigation-js"></script>
+<script src="../wp-content/themes/unistdesign/js/main.js?v=1026152307" id="unistdesign-main-js"></script>
 
 </body>
 </html>
