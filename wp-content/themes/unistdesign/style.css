@@ -1548,3 +1548,7 @@ UNIST Design Department, (C) 2021-2023 UNIST
 /* + 는 글자와 같은 색(평소 회색, 호버 검정). 펼치면 빨간 × */
 .form-card__more>summary::after{color:inherit}
 .form-card__more[open]>summary::after{color:#ff0000}
+
+/* Work 카드 호버 굵기: 외곽선(text-stroke)은 글자 가장자리가 거칠게 깨져서, 옆으로 아주 살짝 겹쳐 그리는 방식으로(폭은 그대로) */
+.work-design-v4 .post__link:hover .post__title,.work-design-v4 .post__link:focus-visible .post__title,.work-v1__more-grid .post__link:hover .post__title,.work-v1__more-grid .post__link:focus-visible .post__title{-webkit-text-stroke:0;text-shadow:.35px 0 0 currentColor}
+.work-design-v4 .post__link .post__title{transition:color 200ms,text-shadow 200ms}
