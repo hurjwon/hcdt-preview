@@ -1429,3 +1429,6 @@ UNIST Design Department, (C) 2021-2023 UNIST
 .work-design-v4 .post__link .post__title{transition:color 200ms,-webkit-text-stroke-width 200ms}
 .work-design-v4 .post__link:hover .post__title,.work-design-v4 .post__link:focus-visible .post__title{color:#6b00ff;-webkit-text-stroke:.45px #6b00ff}
 .work-v1__more-grid .post__link:hover .post__title,.work-v1__more-grid .post__link:focus-visible .post__title{-webkit-text-stroke:.45px #6b00ff}
+
+/* Lab 도 Year 처럼 × 를 이름 바로 옆에(두 묶음의 × 자리 규칙을 같게) */
+.work-design-v4 .work-v3__side a.work-v3__item{justify-content:flex-start;gap:.45rem}
