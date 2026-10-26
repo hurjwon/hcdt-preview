@@ -1272,3 +1272,49 @@ UNIST Design Department, (C) 2021-2023 UNIST
 .work-design-v4 .work-v4__pm::before{top:7.5px;left:0;width:16px;height:1px}
 .work-design-v4 .work-v4__pm::after{top:0;left:7.5px;width:1px;height:16px}
 }
+
+/* 공통 그리드 2: 모든 페이지의 내용 시작선을 헤더 로고 선에 맞춘다(넓은 화면에서 Work 목록·Space·Forms 만 60px 안쪽에 있었다) */
+@media(min-width:1336px){.work-design-v4.site__main,.space-page,.forms-page{padding-right:.25rem;padding-left:.25rem}}
+/* 12칸 위에 놓기: Work 목록은 필터 3칸 + 카드 9칸(카드 하나 = 3칸), 인트로는 제목 4칸 + 글 8칸, 양식은 4칸 + 8칸, Space 카드는 4칸씩 */
+@media(min-width:1024px){
+.work-design-v4 .work-v3{grid-template-columns:repeat(4,minmax(0,1fr));column-gap:var(--dd-gap)}
+.work-design-v4 .work-v3__main{grid-column:span 3}
+.work-design-v4.work-layout-grid .section--posts,.work-design-v4.work-layout-grid .posts__ajax,.work-design-v4.work-layout-index .section--posts,.work-design-v4.work-layout-index .posts__ajax{column-gap:var(--dd-gap)}
+.space-intro,.forms-intro{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--dd-gap)}
+.space-intro__title,.forms-intro__title{grid-column:1/span 4}
+.space-intro__body{grid-column:5/span 6}
+.space-intro .space-book{grid-column:11/span 2;justify-self:end}
+.forms-intro__lead{grid-column:5/span 8}
+.space-cards{column-gap:var(--dd-gap)}
+.forms-design-v2 .forms-body{grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--dd-gap)}
+.forms-design-v2 .forms-list{grid-column:span 2}
+}
+
+/* 1024~1199: 카드가 2열이라 필터 4칸 + 카드 8칸(카드 하나 = 4칸)으로 12칸 선에 맞춘다 */
+@media(min-width:1024px) and (max-width:1199.98px){.work-design-v4 .work-v3{grid-template-columns:repeat(3,minmax(0,1fr))}.work-design-v4 .work-v3__main{grid-column:span 2}}
+
+/* 폰 평면도(1021 미팅): 옆으로 미는 대신 세로로 세운 판을 보여준다. 넓은 화면은 가로판 */
+.space-plan__svg.is-vertical{display:none;min-width:0}
+@media(max-width:719.98px){
+.space-plan__svg:not(.is-vertical){display:none}
+.space-plan__svg.is-vertical{display:block;width:100%;max-width:420px;margin:0 auto}
+.space-plan__scroll{overflow:visible}
+.space-plans__hint{display:none}
+}
+
+/* Useful Forms 카드: 한 줄 설명 + 'When & how' 를 눌러 펼치기(1021 미팅) */
+.form-card__desc{margin:0 0 .9rem;color:#000;font-size:1rem;line-height:1.5}
+.form-card__more{margin:0 0 1rem}
+.form-card__more>summary{display:inline-flex;align-items:center;gap:.5rem;color:rgba(0,0,0,.55);font-size:.875rem;font-weight:500;cursor:pointer;list-style:none}
+.form-card__more>summary::-webkit-details-marker{display:none}
+.form-card__more>summary::after{content:"+";font-size:1.1rem;font-weight:300;line-height:1;transition:transform 200ms}
+.form-card__more[open]>summary::after{transform:rotate(45deg)}
+.form-card__more>summary:hover,.form-card__more>summary:focus-visible{color:#000}
+.form-card__more .form-card__facts{margin-top:.9rem}
+@media(prefers-reduced-motion:reduce){.form-card__more>summary::after{transition:none}}
+
+/* Work 상세 Abstract(1021 미팅): 영어는 본문 크기, 한국어는 한 단계 작고 흐리게 */
+.work-v1 .work-v1__body .work-v1__abstract{margin:2.25rem 0}
+.work-v1 .work-v1__body .work-v1__abstract-title{margin:0 0 .9rem}
+.work-v1 .work-v1__body .work-v1__abstract-ko{margin-top:1.25rem}
+.work-v1 .work-v1__body .work-v1__abstract-ko p,.work-v1 .work-v1__body p.is-ko{color:rgba(0,0,0,.55);font-size:.9375rem;line-height:1.75}
