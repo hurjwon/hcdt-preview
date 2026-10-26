@@ -2,6 +2,25 @@
 <html lang="en-US">
 <head>
 <meta name="robots" content="noindex, nofollow">
+<script>(function(){
+var K='pvSel',base=location.pathname.replace(/category\/work\/.*$/,'category/work/');
+var m=location.pathname.match(/category\/work\/_([^/]+)\//),cur={};
+if(m){m[1].split('_work_').forEach(function(p,i){p=(i?'work_':'')+p;var j=p.lastIndexOf('-');cur[p.slice(0,j)]=p.slice(j+1);});}
+var S;try{S=JSON.parse(sessionStorage.getItem(K)||'null');}catch(e){}
+var pageKey=cur.work_year?'work_year':(cur.work_lab?'work_lab':'');
+if(!S||!pageKey||!S[pageKey]||S[pageKey].indexOf(cur[pageKey])<0){S={work_year:[],work_lab:[]};if(pageKey){S[pageKey]=[cur[pageKey]];}}
+var save=function(){try{sessionStorage.setItem(K,JSON.stringify(S));}catch(e){}};save();
+var keyOf=function(a){var h=a.getAttribute('href')||'';var mm=h.match(/_(?:kind-[^_/]+_)?(work_year|work_lab)-([^/_]+)\//);return mm?[mm[1],mm[2]]:null;};
+var target=function(){var k=null,v=null;['work_year','work_lab'].forEach(function(g){if(S[g].length){k=g;v=S[g][S[g].length-1];}});
+var parts=[];if(cur.kind){parts.push('kind-'+cur.kind);}if(k){parts.push(k+'-'+v);}parts.sort();return base+(parts.length?'_'+parts.join('_')+'/':'');};
+document.addEventListener('DOMContentLoaded',function(){
+document.querySelectorAll('.work-v3__side a.work-v3__item').forEach(function(a){var kv=keyOf(a);var label=a.textContent.replace(/^(Add|Remove) filter:\s*/,'').trim();
+var g=a.closest('#work-panel-year')?'work_year':'work_lab';a.dataset.g=g;a.dataset.v=kv&&kv[0]===g?kv[1]:(cur[g]||'');
+if(S[g].indexOf(a.dataset.v)>=0&&a.dataset.v){a.classList.add('is-current');a.setAttribute('aria-current','true');}});});
+document.addEventListener('click',function(e){var a=e.target.closest('.work-v3__side a.work-v3__item');
+if(a&&a.dataset.v){var g=a.dataset.g,v=a.dataset.v,i=S[g].indexOf(v);if(i>=0){S[g].splice(i,1);}else{S[g].push(v);}save();a.setAttribute('href',target());return;}
+var c=e.target.closest('.work-v3__clear-group');if(c){var g2=c.closest('.work-v3__group').querySelector('#work-panel-year')?'work_year':'work_lab';S[g2]=[];save();c.setAttribute('href',target());}},true);
+})();</script>
 
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -22,8 +41,8 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 .wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
 </style>
 <link rel='stylesheet' id='unistdesign-style-css' href='../../../wp-content/themes/unistdesign/style.css' media='all' />
-<link rel='stylesheet' id='unistdesign-fonts-css' href='https://use.typekit.net/uva3epe.css?ver=1.1.26' media='all' />
-<link rel='stylesheet' id='unistdesign-fonts-kr-css' href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css?ver=1.1.26' media='all' />
+<link rel='stylesheet' id='unistdesign-fonts-css' href='https://use.typekit.net/uva3epe.css?ver=1.1.28' media='all' />
+<link rel='stylesheet' id='unistdesign-fonts-kr-css' href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css?ver=1.1.28' media='all' />
 <link rel='stylesheet' id='dashicons-css' href='../../../wp-includes/css/dashicons.min.css' media='all' />
 <script src="../../../wp-includes/js/dist/vendor/wp-polyfill-inert.min.js" id="wp-polyfill-inert-js"></script>
 <script src="../../../wp-includes/js/dist/vendor/regenerator-runtime.min.js" id="regenerator-runtime-js"></script>
@@ -99,26 +118,7 @@ var unistdesignAjaxPosts = {"url": "__more__", "action": "unistdesign_ajax_posts
 
 		<h1 class="visually-hidden">Category: <span>Work</span></h1>
 		<div class="work-switches">
-			<nav class="work-design-switch" aria-label="Card design">
-									<a href="../_work_design-original/">Original</a>
-									<a href="../_work_design-v1/">V1</a>
-									<a href="../_work_design-v2/">V2</a>
-									<a href="../_work_design-v3/">V3</a>
-									<a href="./" class="is-current" aria-current="true">V4</a>
-							</nav>
-							<nav class="work-design-switch work-design-switch--hover" aria-label="Hover style">
-					<span class="work-design-switch__label">Hover</span>
-											<a href="../_work_hover-2/">2 Spin</a>
-											<a href="../_work_hover-3/">3 In / Out</a>
-											<a href="./" class="is-current" aria-current="true">4 Corners</a>
-									</nav>
-				<nav class="work-design-switch work-design-switch--layout" aria-label="Layout">
-					<span class="work-design-switch__label">Layout</span>
-											<a href="../_work_layout-list/">List</a>
-											<a href="./" class="is-current" aria-current="true">Grid</a>
-											<a href="../_work_layout-index/">Index</a>
-									</nav>
-														<nav class="work-design-switch work-view-switch" aria-label="View">
+			<nav class="work-design-switch work-view-switch" aria-label="View">
 						<span class="work-design-switch__label">View</span>
 						<a href="./" class="is-current" aria-current="true">Desktop</a>
 						<a href="../_kind-award_work_lab-decs_work_view-mobile/">Mobile</a>

@@ -1318,3 +1318,23 @@ UNIST Design Department, (C) 2021-2023 UNIST
 .work-v1 .work-v1__body .work-v1__abstract-title{margin:0 0 .9rem}
 .work-v1 .work-v1__body .work-v1__abstract-ko{margin-top:1.25rem}
 .work-v1 .work-v1__body .work-v1__abstract-ko p,.work-v1 .work-v1__body p.is-ko{color:rgba(0,0,0,.55);font-size:.9375rem;line-height:1.75}
+
+/* 1021 미팅 피드백: 필터 항목마다 아주 연한 회색 박스, 박스 끝에 + (고르면 빨간 ×). 누를 곳이 더 분명하게 */
+.work-design-v4 .work-v3__side .work-v3__list{gap:.35rem}
+.work-design-v4 .work-v3__side .work-v3__list--years{gap:.35rem}
+.work-design-v4 .work-v3__side a.work-v3__item{padding:.5rem .65rem;background:#f5f5f3;transition:background-color 200ms,color 200ms}
+.work-design-v4 .work-v3__side a.work-v3__item:hover,.work-design-v4 .work-v3__side a.work-v3__item:focus-visible{background:#ececea}
+.work-design-v4 .work-v3__side a.work-v3__item.is-current,.work-design-v4 .work-v3__side a.work-v3__item.is-picking{background:#ececea}
+@media(max-width:782.98px){.work-design-v4 .work-v3__side .work-v3__list,.work-design-v4 .work-v4__panel>.work-v3__list{gap:.35rem}.work-design-v4 .work-v3__side .work-v3__list--years{gap:.35rem}.work-design-v4 .work-v3__side a.work-v3__item{padding:.65rem .75rem}}
+
+/* 폰 Space(1021 미팅, 교수님 안): 세로 지도를 왼쪽에 붙여 두고 오른쪽에 공간 카드. 지도에서 누르면 오른쪽 카드로 스크롤된다 */
+@media(max-width:719.98px){
+.space-tabs__panel:not([hidden]):has(.space-plan__scroll){display:grid;grid-template-columns:minmax(0,42fr) minmax(0,58fr);gap:0 .75rem;align-items:start}
+.space-tabs__panel:has(.space-plan__scroll)>.space-plan__scroll{position:-webkit-sticky;position:sticky;top:3.75rem;grid-column:1;grid-row:1;margin:0}
+.space-tabs__panel:has(.space-plan__scroll)>.space-cards{grid-column:2;grid-row:1;margin-top:0;grid-template-columns:minmax(0,1fr);gap:2rem}
+.space-tabs__panel:has(.space-plan__scroll) .space-plan__svg.is-vertical{max-width:none;max-height:calc(100vh - 4.75rem);width:auto;margin:0}
+.space-card{scroll-margin-top:4rem}
+}
+
+/* 폰 Space 오른쪽 좁은 카드: 사진 없는 띠에서 'Bookable' 배지와 'No photo yet' 이 겹치지 않게 글자를 오른쪽으로 */
+@media(max-width:719.98px){.space-card__photos.is-none .space-photo-missing{justify-content:flex-end;padding-right:.75rem}}
