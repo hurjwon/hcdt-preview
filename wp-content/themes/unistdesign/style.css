@@ -1317,7 +1317,7 @@ UNIST Design Department, (C) 2021-2023 UNIST
 .work-v1 .work-v1__body .work-v1__abstract{margin:2.25rem 0}
 .work-v1 .work-v1__body .work-v1__abstract-title{margin:0 0 .9rem}
 .work-v1 .work-v1__body .work-v1__abstract-ko{margin-top:1.25rem}
-.work-v1 .work-v1__body .work-v1__abstract-ko p,.work-v1 .work-v1__body p.is-ko{color:rgba(0,0,0,.55);font-size:.9375rem;line-height:1.75}
+.work-v1 .work-v1__body .work-v1__abstract-ko p,.work-v1 .work-v1__body p.is-ko{color:rgba(0,0,0,.85);font-size:.9375rem;line-height:1.75}
 
 /* 1021 미팅 피드백: 필터 항목마다 아주 연한 회색 박스, 박스 끝에 + (고르면 빨간 ×). 누를 곳이 더 분명하게 */
 .work-design-v4 .work-v3__side .work-v3__list{gap:.35rem}
@@ -1365,7 +1365,7 @@ UNIST Design Department, (C) 2021-2023 UNIST
 .submit-review__img img{display:block;width:100%;height:auto}
 .submit-review__title{margin:0 0 1.25rem;font-size:1.5rem;font-weight:700;line-height:1.2}
 .submit-review__body,.submit-review__abstract{margin:0 0 1rem;font-size:.9375rem;line-height:1.6}
-.submit-review__abstract.is-ko{color:rgba(0,0,0,.55);font-size:.875rem}
+.submit-review__abstract.is-ko{color:rgba(0,0,0,.85);font-size:.875rem}
 .submit-review__actions{margin-top:1.75rem}
 .submit-mailbox__mail{margin:0 0 1.5rem;padding:1rem 1.25rem;background:#f5f5f3}
 .submit-mailbox__meta{margin:0 0 .25rem;color:rgba(0,0,0,.5);font-size:.8125rem}
@@ -1549,3 +1549,28 @@ UNIST Design Department, (C) 2021-2023 UNIST
 /* Work 상세 대표 이미지: 흰 여백이 들어간 이미지도 액자처럼 보이게 연한 회색 칸 + 흰색만 회색에 섞기(multiply) */
 .work-v1__hero{background:#f5f5f3}
 .work-v1__hero img{mix-blend-mode:multiply}
+
+/* Work V4 grid: smaller featured title on phones */
+@media(max-width:767.98px){.work-design-v4.work-layout-grid .post--big .post__title{font-size:1.25rem;line-height:1.25;letter-spacing:-.01em}}
+
+/* Useful Forms: task pills wrap in rows on phones so the forms start sooner */
+@media(max-width:767.98px){.forms-design-v2 .form-finder__tasks{flex-direction:row;gap:.375rem}.forms-design-v2 .form-finder__task{padding:.45rem .8rem;font-size:.8125rem}}
+
+/* Mini header (on scroll): same logo line and menu size as the main header */
+@media(min-width:1024px){.mini-header__navigation>.primary-menu a,.mini-header__navigation .tabs a{font-size:1.125rem}}
+@media(min-width:1336px){.mini-header__container{padding-right:.25rem;padding-left:.25rem}}
+
+/* Work filters: lighter cool grey panel */
+.work-design-v4 .work-v3__group:not(.is-collapsed) .work-v4__panel{background:#f6f7f9}
+
+/* Work filters: one grey box around Year + Lab on wide screens */
+@media(min-width:1024px){.work-design-v4 .work-v3__side{padding:1.25rem 1rem;background:#f6f7f9}.work-design-v4 .work-v3__group:not(.is-collapsed) .work-v4__panel{padding-right:0;padding-left:0;background:transparent}}
+
+/* Work: tighter gap between the type tabs and the filter box / first work */
+@media(min-width:1024px){.work-design-v4 .work-v3{margin-top:3rem}}
+/* Work type tabs on phones: smaller text so all four fit */
+@media(max-width:767.98px){.work-design-v4 .work-filters .sub-menu a{font-size:1rem}}
+/* Work filters: slightly tighter gap under the Year and Lab headings on wide screens */
+@media(min-width:1024px){.work-design-v4 .work-v3__side .work-v3__group:not(.is-collapsed) .work-v4__panel{padding-top:.375rem}}
+/* Space plan: lift names inside their boxes, like Toilet and Stairs */
+.space-plan__svg .space-plan__lift-label{fill:#fff;font-size:10px;font-weight:500}.space-plan__svg .space-plan__lift-label.is-cargo{fill:#6b00ff}
